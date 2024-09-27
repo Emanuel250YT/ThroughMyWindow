@@ -244,14 +244,14 @@ nav {
 }
 
 nav ul a {
-  color: white;
+  color: white !important;
   text-decoration: none;
   font-size: 2vh;
-  opacity: 0.2;
+  opacity: 0.2 !important;
 }
 
 nav ul a:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 @keyframes animateZoro {
