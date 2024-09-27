@@ -1,0 +1,316 @@
+:root {
+  --backgroundColor: black;
+}
+
+@font-face {
+  font-family: "TF";
+  src: url("../font/TF.ttf") format("truetype");
+}
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition-duration: 0.6s;
+  overflow-x: hidden;
+  font-family: "TF", sans-serif;
+}
+
+
+
+
+html,
+body {
+  background-color: var(--backgroundColor) !important;
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+
+}
+
+header video {
+  position: relative;
+  filter: blur(0.2vh);
+  height: 100vh;
+  width: 100vw;
+  object-fit: fill;
+}
+
+header .videoContainer {
+  transform: translateY(-100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .headerContent {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+header .headerContent h1 {
+  font-size: 7vh;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.preloader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.37);
+}
+
+.zoro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zoro img {
+  margin-right: 5vh !important;
+
+}
+
+.zoro h1 {
+  font-size: 12vh !important;
+}
+
+.zoro p {
+  font-size: 5vh !important;
+}
+
+
+.preloaderItem {
+  animation-name: preloaderAnimation;
+  animation-duration: 5s;
+  opacity: 0;
+  width: max-content;
+}
+
+.preloaderItem p {
+  font-size: 2.5vh;
+}
+
+.preloaderItem h1 {
+  font-size: 5vh;
+}
+
+.preloader img {
+  width: 15vw;
+
+}
+
+.disableLoader {
+  opacity: 0;
+}
+
+.obsfuscate {
+  filter: blur(10vh);
+}
+
+
+
+main {
+  width: 100vw !important;
+
+}
+
+.zoroContainer {
+  transform: translateY(-120vh);
+  height: 20vh;
+  width: 100vw;
+  z-index: 2;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+}
+
+.zoroContainer img {
+  width: 10vh;
+}
+
+.animateZoro {
+  animation-name: animateZoro;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+
+#aboutUs,
+#gallery,
+#contact {
+  padding: 10vh 10vh;
+  color: rgba(255, 255, 255, 0.317);
+}
+
+#aboutUs .imageContainer,
+#contact .imageContainer {
+  margin-top: 5vh;
+  width: 100%;
+  margin-left: 10vh;
+}
+
+#aboutUs .imageContainer img,
+#contact .imageContainer img {
+  height: 30vh;
+}
+
+#aboutUs .row .col-6 {
+  height: max-content !important;
+  overflow: hidden;
+}
+
+#gallery .row .col-4 {
+  height: max-content !important;
+  overflow: hidden;
+}
+
+#gallery p {
+  margin-bottom: 10vh;
+}
+
+.textWithPaper {
+  height: 50vh;
+  width: 50vh;
+  background: url("../img/paper.png");
+  background-size: cover;
+  padding: 4vw;
+  overflow: hidden;
+
+  animation-name: textWithPaperAnimation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* transform: rotate3d(-0.4, 0.5, 0, 45deg); */
+}
+
+.textWithPaper:hover {
+  opacity: 0.1;
+  filter: blur(2vh);
+
+
+}
+
+.alignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textWithPaper p {
+  color: black;
+  transform: translateY(-1vh);
+  line-height: 3vh;
+}
+
+footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.325);
+}
+
+nav ul {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav {
+  padding: 3vh 10vw;
+  width: 100vw;
+  position: absolute;
+  z-index: 3;
+}
+
+nav ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 2vh;
+  opacity: 0.2;
+}
+
+nav ul a:hover {
+  opacity: 1;
+}
+
+@keyframes animateZoro {
+  0% {}
+
+  50% {
+    transform: translate3d(5vw, -5vh, 0vh) rotate(50deg);
+  }
+
+  100% {
+    transform: translate3d(10vw, 10vh, 0vh) rotate(100deg);
+    filter: blur(10vh);
+    opacity: 0;
+  }
+}
+
+@keyframes preloaderAnimation {
+  0% {
+    opacity: 0;
+    transform: translate3d(3vh, 2vh, 1vh);
+    filter: blur(10vh);
+  }
+
+  33% {
+    opacity: 0.5;
+    transform: translate3d(1vh, 2vh, 3vh);
+    filter: blur(0px);
+  }
+
+  66% {
+    filter: blur(0.1vh);
+    transform: translate3d(1vh, 1vh, 1vh);
+  }
+
+  79% {
+    opacity: 0.5;
+    filter: blur(0px);
+    transform: translate3d(2vh, 2vh, 2vh);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(10vh);
+    transform: translate3d(-2vh, -2vh, -2vh);
+
+  }
+}
+
+@keyframes textWithPaperAnimation {
+  0% {
+    transform: rotate3d(-0.4, 0.5, 0, 45deg);
+  }
+
+  50% {
+    transform: rotate3d(-0.25, 0.45, 0, 45deg) translateY(-1vh);
+  }
+
+  100% {
+    transform: rotate3d(-0.4, 0.5, 0, 45deg);
+
+  }
+}
