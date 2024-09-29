@@ -7,6 +7,8 @@
   <title>Through My Window</title>
   <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/shaderEffect.css">
+
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
@@ -16,6 +18,86 @@
 
 <body>
 
+  <div class="controllers">
+    <div class="songButton"></div>
+    <div class="shaderButton"></div>
+  </div>
+
+  <div id="SHADER-EFFECTS">
+    <div class="backgroundColor">
+
+    </div>
+    <div id="vars">
+
+    </div>
+
+    <div id="randomDeco">
+
+    </div>
+  </div>
+
+
+
+  <script>
+    const SHADERS_CONTAINER = document.getElementById("SHADERS-EFFECTS")
+    const varsContainer = document.getElementById("vars")
+    const decoContainer = document.getElementById("randomDeco")
+    const vars = []
+
+    for (let i = 0; i < 10; i++) {
+      const varA = document.createElement("div")
+      varA.id = "var-" + i
+      varA.classList.add("varTV")
+      varsContainer.insertAdjacentElement("afterbegin", varA)
+      vars.push(varA)
+    }
+
+    function managerVars() {
+      vars.forEach(varA => {
+        varA.style.right = Math.floor(Math.random() * window.innerWidth) + "px"
+      })
+    }
+
+    function generateRandomItems() {
+      const decoTVList = [...document.getElementsByClassName("decoTV")];
+      decoTVList.forEach(dec => dec.remove())
+      const validList = [
+        "./img/deco0.webp",
+        "./img/deco1.webp",
+        "./img/deco2.webp",
+        "./img/deco3.webp",
+        "./img/deco4.webp",
+        "./img/deco5.webp",
+        "./img/deco6.webp",
+        "./img/deco7.webp",
+        "./img/deco8.webp",
+        "./img/deco9.webp"
+      ];
+
+      for (let i = 0; i < 7; i++) {
+        const varA = document.createElement("img")
+        varA.id = "deco-" + i
+        varA.classList.add("decoTV")
+        varA.src = validList[Math.floor(Math.random() * validList.length)]
+        varA.style.right = Math.floor(Math.random() * window.innerWidth) + "px"
+        varA.style.top = Math.floor(Math.random() * window.innerHeight) + "px"
+        varA.style.height = Math.floor(Math.random() * window.innerHeight / 10)
+        decoContainer.insertAdjacentElement("afterbegin", varA)
+      }
+    }
+
+    managerVars()
+    // generateRandomItems()
+
+    setInterval(() => managerVars(), 500);
+    setInterval(() => generateRandomItems(), 3000)
+
+    // document.addEventListener('click', function() {
+    //   var audio = new Audio('./vid/bg.mp3');
+    //   audio.volume = 0.1;
+    //   audio.play();
+    // });
+  </script>
 
   <div class="preloader" id="preloader">
     <div id="preloaderContent">
@@ -152,7 +234,7 @@
   <footer>
 
 
-    <p>All rights reserved. Copyright &#169; 2024 Zoro Studios by Cloudycoding | Website v0.2</p>
+    <p>All rights reserved. Copyright &#169; 2024 Zoro Studios by Cloudycoding | Website v0.3</p>
 
   </footer>
 

@@ -1,0 +1,93 @@
+@property --blackColor {
+  syntax: '<color>';
+  initial-value: rgb(0, 0, 0);
+  inherits: false;
+}
+
+@property --transparentColor {
+  syntax: '<color>';
+  initial-value: rgb(255, 255, 255, 0);
+  inherits: false;
+}
+
+#SHADER-EFFECTS {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+
+  pointer-events: none;
+}
+
+.backgroundColor {
+  background: radial-gradient(var(--transparentColor), var(--blackColor));
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  animation-name: ShaderEffectMainAnimation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transition: --blackColor 3s, --transparentColor 3s;
+  pointer-events: none;
+}
+
+.varTV {
+  position: fixed;
+  height: 100vh;
+  width: 0.2vh;
+  background-color: aliceblue;
+  z-index: 98;
+  opacity: 0.05;
+
+}
+
+.decoTV {
+  position: fixed;
+  z-index: 97;
+  animation-name: decoTVAnimation;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes decoTVAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.1;
+    filter: none;
+  }
+
+  100% {
+    opacity: 0;
+
+  }
+}
+
+
+
+@keyframes ShaderEffectMainAnimation {
+  0% {
+    --transparentColor: rgb(255, 255, 255, 0);
+  }
+
+  25% {
+    --transparentColor: black;
+  }
+
+  50% {
+    --transparentColor: rgb(255, 255, 255, 0);
+  }
+
+
+  100% {
+    --transparentColor: rgb(255, 255, 255, 0);
+  }
+}
