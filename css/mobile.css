@@ -1,0 +1,36 @@
+@media (max-aspect-ratio: 4/3) {
+
+  .col-6,
+  .col-3,
+  .col-4 {
+    width: 100% !important;
+    margin: 10vh 0vw;
+  }
+
+  #aboutUs .imageContainer,
+  #contact .imageContainer {
+    margin: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .col-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  * {
+    text-align: center;
+  }
+
+  .headerContent h1 {
+    font-size: 6vw !important;
+  }
+
+  header video {
+
+    width: 200vw !important;
+  }
+}
