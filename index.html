@@ -45,9 +45,10 @@
       <video src="./vid/gameView.webm" autoplay loop muted></video>
     </div>
     <div class="zoroContainer">
-      <img id="zoroClick" src="./img/logo.png" alt="" onclick="clickZoro()">
+      <img id="zoroClick" src="./img/zoroSee.png" alt="" onclick="clickZoro()">
     </div>
   </header>
+  <hr>
 
   <main class="obsfuscate">
     <div id="aboutUs">
@@ -143,14 +144,21 @@
     <div id="devNotes">
     </div>
 
-    <footer>
 
 
-      <p>All rights reserved. Copyright &#169; 2024 Zoro Studios by Cloudycoding </p>
-
-    </footer>
 
   </main>
+
+  <footer>
+
+
+    <p>All rights reserved. Copyright &#169; 2024 Zoro Studios by Cloudycoding | Website v0.1</p>
+
+  </footer>
+
+  <div class="backgroundVideo">
+    <video src="./vid/mainbg.mp4" autoplay loop muted></video>
+  </div>
 
   <script>
     function clickZoro() {
@@ -160,6 +168,11 @@
         window.location.assign("#aboutUs")
       }, 200)
     }
+
+    setInterval(() => {
+      const zoro = document.getElementById("zoroClick")
+      zoro.classList.toggle("scale-1")
+    }, 5000)
 
     function loadComponents(arr, ended) {
 
@@ -200,28 +213,28 @@
 
     }
 
-    loadComponents([
-      `<div class="zoro preloaderItem">
-        <img src="./img/logo.png" alt="logo">
-        <div class="textContent">
-          <h1>Zoro</h1>
-          <p>Studios</p>
-        </div>
-      </div>`,
-      `<div class="preloaderItem">
-        <p>Obra original escrita por</p>
-        <h1>Sofia Maciel Cervantes</h1>
-      </div>`,
-      `<div class="preloaderItem">
-        <p>Programada y adaptada por</p>
-        <h1>Eduardo Emanuel Guzman</h1>
-      </div>`
-    ])
+    // loadComponents([
+    //   `<div class="zoro preloaderItem">
+    //     <img src="./img/logo.png" alt="logo">
+    //     <div class="textContent">
+    //       <h1>Zoro</h1>
+    //       <p>Studios</p>
+    //     </div>
+    //   </div>`,
+    //   `<div class="preloaderItem">
+    //     <p>Obra original escrita por</p>
+    //     <h1>Sofia Maciel Cervantes</h1>
+    //   </div>`,
+    //   `<div class="preloaderItem">
+    //     <p>Programada y adaptada por</p>
+    //     <h1>Eduardo Emanuel Guzman</h1>
+    //   </div>`
+    // ])
 
 
 
 
-    // loadComponents([])
+    loadComponents([])
   </script>
 </body>
 
