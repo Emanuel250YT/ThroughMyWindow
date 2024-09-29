@@ -220,6 +220,11 @@ main {
   height: 30vh;
 }
 
+
+#contact a {
+  color: white;
+}
+
 hr {
   margin: 0 0 !important;
   color: white !important;
